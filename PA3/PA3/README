@@ -1,0 +1,9 @@
+ 
+Timothy Cohen (tacohen@email.wm.edu) and Joseph Acosta (jracosta@email.wm.edu)
+
+Our test cases cover the following:
+Test 1: Let, lambda, branching, recursion
+Test 2: Let, lambda, substution, partial evaluation
+Test 3: Branching, concatentaion, integer mathematics
+Test 4: Function, recursion, list operation, isNil
+Test 5: Let, list operations, print, string handling

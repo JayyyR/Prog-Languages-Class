@@ -1,0 +1,56 @@
+ 
+Joseph Acosta
+jracosta@email.wm.edu
+
+TEST CASE 1:
+
+Description:
+This test case tests the parser's ability to parse through function in L. The test case also
+makes use of an Branch statement within the function.
+
+Defects this covers:
+This checks if the L function works with the parser. It will also check for defects with
+if-else statements, simple binary operations and the use of Lambda in L.
+
+TEST CASE 2:
+
+Description:
+This test case tests the parser's ability to parse through a lambda command in L as well
+as a let decleration.
+
+Defects this covers:
+This checks if lambda and let work with the parser. The test also utilizes and Id_list.
+The lambda should be within the let decleration. If the user's parser can't parse through
+any of these, this test will fail.
+
+TEST CASE 3:
+
+Description:
+This is test case for all the binary operators
+
+Defects this covers:
+This checks for defects within the parser's ability to parse through all the binary
+operators. It checks for defects within TOKEN_PLUS, TOKEN_AND, TOKEN_OR, TOKEN_MINUS,
+ TOKEN_TIMES, TOKEN_DIVIDE, TOKEN_EQ, TOKEN_NEQ, TOKEN_LT, TOKEN_LEQ, TOKEN_GT, TOKEN_CONS,
+ and TOKEN_GEQ. If the parser has a defect relating to these tokens, this test will fail.
+
+TEST CASE 4:
+
+Description:
+This is a test to see if expression lists work with the parser. It places two lambdas
+and a fun in an expression list to see if the parser creates the correct output.
+
+Defects this covers:
+This checks for defects within the parser's ability to parse through expression lists.
+The test will also make sure the parser can correctly parse through lambda and fun calls.
+If the parser cannot do this, this test will fail.
+
+TEST CASE 5:
+
+Description:
+This is a test for all the unary operators.
+
+Defects this covers:
+This checks for defects within the parser's ability to parse through all the unary operators.
+ It checks for defects within TOKEN_PRINT, TOKEN_HD, TOKEN_TL, and TOKEN_ISNIL. If 
+the parser cannot recognize these, this test will fail.

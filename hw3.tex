@@ -1,0 +1,82 @@
+\documentclass[11pt]{article}
+
+\usepackage{times,mathptm}
+\usepackage{pifont}
+\usepackage{exscale}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{epsfig}
+
+\textwidth 6.5in
+\textheight 9in
+\oddsidemargin -0.0in
+\topmargin -0.0in
+
+\parindent 0pt     % How much the first word of a paragraph is indented.
+\parskip 0pt       % How much extra space to leave between paragraphs.
+
+\begin{document}
+
+\begin{center}             % If you only centering 1 line use \centerline{}
+\begin{LARGE}
+{\bf CS 312 Work Assignment 5}
+\end{LARGE}
+\vskip 0.25cm      % vertical skip (0.25 cm)
+
+**Joseph Acosta**\\
+\end{center}
+
+\begin{enumerate}
+
+\item
+\begin{enumerate}
+\item $4$\\
+	  $5*6$\\
+	  $8/2$\\
+\item $S->    aS^1|bS^2$\\
+	  $S^1->  aS^1|bS^1|aS^3$\\
+	  $S^2->  aS^2|bS^2|bS^3$\\
+	  $S^3->  \Sigma$\\
+\item $S->	  bSaS^1|aS^2|aS^3|S^3$\\
+	  $S^1->  aS^3$\\
+	  $S^2->  bS^2aS^3|S^3$\\
+	  $S^3->  \Sigma$\\
+\item $S-> aSa|bSb|a|b|\Sigma$\\
+\end{enumerate}
+
+\item For each of the languages of (1), give an equivalent regular expression or explain
+why the language is not regular.
+\begin{enumerate}
+\item Not Regular because we cannot keep track of the number of initial a's in order to double them after we have listed our number of b's. Since the a at the end is to the power of 2n and the a at the beginning is to the power of n, the a at the end must be listed twice as much. But it is impossible to keep track of the number of initial a's.\\
+\item $(a+b)+(a^+(a+b)^*a^+)+(b^+(a+b)^*b^+)$\\
+\item Not Regular because we cannot keep track of the number of b's without restricting the order of the letters.\\
+\item Not Regular because we cannot keep track of the number of a's or b's at the first half to repeat at the second half.\\
+\end{enumerate}
+
+\item In the old days, scientific calculators and many programs took their input in what is known
+as reverse polish notation. In this notation, the operator is written after the operands. For example,
+the expression 3 4 + means (3 + 4) and the expression 3 4 + 7 * means (3 + 4) * 7. Consider the
+following grammar for expressions in RPN:\\
+\\
+\begin{center}
+\begin{enumerate}
+\item This grammar is not ambiguous because it's impossible to have more than one derivation for the same string.\\
+\item The advantage of RPN over in-fix is that RPN limits lookahead. You can perform the calculation once you hit the operator and there is no need to look ahead.\\
+\vspace{12pt}
+\item \\
+\hspace{12pt}$\vdash int:int$\\
+\underline{$\vdash S_1:int_1	\vdash S_2:int_2$}\\
+$S_1S_2+:int_1+int_2$\\
+\\
+\vspace{12pt}
+\underline{$\vdash S_1:int_1	\vdash S_2:int_2$}\\
+$S_1S_2*:int_1*int_2$\\
+\vspace{12pt}
+\item  \\
+\underline{$\vdash 3:3   \vdash 4:4$} \\
+\underline{$\vdash 3\hspace{5pt} 4+:7$\hspace{40pt}$\vdash 2:2$}\\
+$\hspace{30pt}\vdash 7\hspace{5pt}2*:14$\\
+
+\end{enumerate}
+\end{center}
+\end{document}

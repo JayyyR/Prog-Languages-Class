@@ -1,0 +1,25 @@
+let testList = 0 in
+let y = 5 in
+
+fun even with x =
+if x=0 then
+1
+else 
+
+let testList = testList@x in
+let _ = print testList in
+
+(odd x-1) in
+
+fun odd with x =
+if x=0 then
+
+
+0
+else
+
+let testList = testList@(x*4) in
+let _ = print testList in
+
+(even x-1) in
+(odd y)

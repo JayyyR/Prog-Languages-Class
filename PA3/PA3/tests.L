@@ -1,0 +1,11 @@
+ 
+(*5 test cases by Timothy Cohen (tacohen@email.wm.edu) and Joesph Acosta (jracosta@email.wm.edu)*)
+let numList = (76@53) in let _ = print "This is a string of random words: " in 7 (*Test 1*)
+
+fun length with list = if isNil list then 0 else (length #list)+1 in (length 1@2) (*Test 2*)
+
+if 0 then 5@5@4 else 9+7685-7606 (*Test 3*)
+
+let x = lambda y.y in (x 3) (*Test 4*)
+
+(let f = lambda n. if n=((0+3)*0) then #(6@1) else n* (f (n-1)) in (f !(5@3@4@896876))  (*Test 5*)

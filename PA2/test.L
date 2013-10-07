@@ -1,0 +1,1 @@
+fun subtract with x = 5-x in (subtract 2)

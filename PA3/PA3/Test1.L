@@ -1,0 +1,1 @@
+(let f = lambda n. if n=((0+3)*0) then #(6@1) else n* (f (n-1)) in (f 5))  

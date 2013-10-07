@@ -1,0 +1,242 @@
+\documentclass[11pt]{article}
+
+\usepackage{times,mathptm}
+\usepackage{pifont}
+\usepackage{exscale}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{epsfig}
+
+\textwidth 6.5in
+\textheight 9in
+\oddsidemargin -0.0in
+\topmargin -0.0in
+
+\parindent 0pt     % How much the first word of a paragraph is indented.
+\parskip 0pt       % How much extra space to leave between paragraphs.
+
+\begin{document}
+
+\begin{center}             % If you only centering 1 line use \centerline{}
+\begin{LARGE}
+{\bf CS 312 Work Assignment 5}
+\end{LARGE}
+\vskip 0.25cm      % vertical skip (0.25 cm)
+
+**Joseph Acosta**\\
+\end{center}
+
+\begin{enumerate}
+
+\item
+\begin{enumerate}
+\item $4$\\
+	  $5*6$\\
+	  $8/2$\\
+\item $\vdash S_1:c_1$\\
+
+		\underline{$\vdash S_1:c_1$ \hspace{12} $\vdash S_2:c_2$}\\
+		$\vdash S_1*S_2$ : $c_1*c_2$\\
+		
+		$\vdash S_2:$ $c_2$ is not zero\\
+		\underline{$\vdash S_1:c_1$}\\
+		$\vdash S_1/S_2 : c_1/c_2$\\
+		
+		\underline{$\vdash e_2[e_1/x]:e$}\\
+		$\vdash$ let x = $e_1$ in $e_2$: e\\
+		
+\item \underline{$\Gamma\vdash S_1:non zero$ \hspace{12} $\Gamma\vdash S_2:non zero$}\\
+		$\Gamma\vdash S_1*S_2:non zero$\\
+		
+		\underline{$\Gamma\vdash S_1:non zero$ \hspace{12} $\Gamma\vdash S_2:zero$}\\
+		$\Gamma\vdash S_1*S_2:zero$\\
+		
+		\underline{$\Gamma\vdash S_1:zero$ \hspace{12} $\Gamma\vdash S_2:non zero$}\\
+		$\Gamma\vdash S_1*S_2:zero$\\
+		
+		\underline{$\Gamma\vdash S_1:zero$ \hspace{12} $\Gamma\vdash S_2:zero$}\\
+		$\Gamma\vdash S_1*S_2:zero$\\
+		
+		\underline{$\Gamma\vdash S_1:zero$ \hspace{12} $\Gamma\vdash S_2:non zero$}\\
+		$\Gamma\vdash S_1/S_2:zero$\\
+		
+		\underline{$\Gamma\vdash S_1:non zero$ \hspace{12} $\Gamma\vdash S_2:non zero$}\\
+		$\Gamma\vdash S_1/S_2:non zero$\\
+		
+		$\Gamma\vdash S_1: t_1$\\
+		$t = t_1$\\
+		\underline{$\Gamma[x \leftarrow t]\vdash S_2:t_2$ }\\
+		$\Gamma\vdash let x=S_1 in S_2:T_2$\\
+	
+\item  \textbf{Base:}\\
+		\\
+			\underline{$non zero$ $i$}\\
+			$\Gamma\vdash i:non zero$\\
+			
+			\underline{$zero$ $i$}\\
+			$\Gamma\vdash i:zero$\\
+			\\
+			\textbf{Inductive Case 1:}\\
+			\\
+			\underline{$\vdash S_1:c_1$ \hspace{12} $\vdash S_2:c_2$}\\
+			$\vdash S_1*S_2$ : $c_1*c_2$\\
+			
+			\underline{$\Gamma\vdash S_1:non zero$ \hspace{12} $\Gamma\vdash S_2:non zero$}\\
+			$\Gamma\vdash S_1*S_2:non zero$\\
+		
+			\underline{$\Gamma\vdash S_1:non zero$ \hspace{12} $\Gamma\vdash S_2:zero$}\\
+			$\Gamma\vdash S_1*S_2:zero$\\
+		
+			\underline{$\Gamma\vdash S_1:zero$ \hspace{12} $\Gamma\vdash S_2:non zero$}\\
+			$\Gamma\vdash S_1*S_2:zero$\\
+		
+			\underline{$\Gamma\vdash S_1:zero$ \hspace{12} $\Gamma\vdash S_2:zero$}\\
+			$\Gamma\vdash S_1*S_2:zero$\\
+			
+			Since we know $c_1$ is a non zero or a zero, and $c_2$ is a non zero or a zero we know $c_1*c_2$ is also non zero or zero.\\
+			\\
+			\textbf{Inductive Case 2:}\\
+			\\
+			\underline{$\vdash S_1:c_1$ \hspace{12} $\vdash S_2:c_2$}\\
+			$\vdash S_1/S_2$ : $c_1/c_2$\\
+			
+			\underline{$\Gamma\vdash S_1:zero$ \hspace{12} $\Gamma\vdash S_2:non zero$}\\
+		$\Gamma\vdash S_1/S_2:zero$\\
+		
+		\underline{$\Gamma\vdash S_1:non zero$ \hspace{12} $\Gamma\vdash S_2:non zero$}\\
+		$\Gamma\vdash S_1/S_2:non zero$\\
+		
+		Since we know $c_1$ is a zero or a non zero, and we know $c_2$ is a non zero, $c_1/c_2$ must be a non zero.\\
+		\\
+		\textbf{Inductive Case 3:}\\
+		\\
+		\underline{$\vdash e_2[e_1/x]:e$}\\
+		$\vdash$ let x = $e_1$ in $e_2$: e\\
+		
+		$\Gamma\vdash S_1: t_1$\\
+		$t = t_1$\\
+		\underline{$\Gamma[x \leftarrow t]\vdash S_2:t_2$ }\\
+		$\Gamma\vdash let x=S_1 in S_2:T_2$\\
+		
+		Since we know $c_1$ is zero or non zero, we know $c_2$ must also be zero or non_zero.\\
+	
+		
+\item \textbf{Base:}\\
+		\\
+			\underline{$non zero$ $i$}\\
+			$\Gamma\vdash i:non zero$\\
+			
+			\underline{$zero$ $i$}\\
+			$\Gamma\vdash i:zero$\\
+			\\
+			
+			Clearly, if i types as zero or non zero, the corresponding operational
+semantics rule applies\\
+			\textbf{Inductive Case 1:}\\
+			\\
+			\underline{$\vdash S_1:c_1$ \hspace{12} $\vdash S_2:c_2$}\\
+			$\vdash S_1*S_2$ : $c_1*c_2$\\
+			
+			\underline{$\Gamma\vdash S_1:non zero$ \hspace{12} $\Gamma\vdash S_2:non zero$}\\
+			$\Gamma\vdash S_1*S_2:non zero$\\
+		
+			\underline{$\Gamma\vdash S_1:non zero$ \hspace{12} $\Gamma\vdash S_2:zero$}\\
+			$\Gamma\vdash S_1*S_2:zero$\\
+		
+			\underline{$\Gamma\vdash S_1:zero$ \hspace{12} $\Gamma\vdash S_2:non zero$}\\
+			$\Gamma\vdash S_1*S_2:zero$\\
+		
+			\underline{$\Gamma\vdash S_1:zero$ \hspace{12} $\Gamma\vdash S_2:zero$}\\
+			$\Gamma\vdash S_1*S_2:zero$\\
+			
+			We know from the inductive hypothesis that the evaluation of
+$S_1$ and $S_2$ will never get stuck. We also know from
+preservation that the expressions $S_1$ and $S_2$ must evaluate to
+zero or non zero, therefore the operational
+semantics rule for multiplication will always apply since the hypotheses
+only require that $c_1$ and $c_2$ are zero or non zero.\\
+			\\
+			\textbf{Inductive Case 2:}\\
+			\\
+			\underline{$\vdash S_1:c_1$ \hspace{12} $\vdash S_2:c_2$}\\
+			$\vdash S_1/S_2$ : $c_1/c_2$\\
+			
+			\underline{$\Gamma\vdash S_1:zero$ \hspace{12} $\Gamma\vdash S_2:non zero$}\\
+		$\Gamma\vdash S_1/S_2:zero$\\
+		
+		\underline{$\Gamma\vdash S_1:non zero$ \hspace{12} $\Gamma\vdash S_2:non zero$}\\
+		$\Gamma\vdash S_1/S_2:non zero$\\
+		
+		We know from the inductive hypothesis that the evaluation of
+$S_1$ and $S_2$ will never get stuck. We also know from
+preservation that the expression $S_1$ must evauate to zero or non zero and $S_2$ must evaluate to non zero, therefore the operational
+semantics rule for division will always apply since the hypotheses
+only require that $c_1$ is a non zero or zero and $c_2$ is a non zero.\\
+		\\
+		\textbf{Inductive Case 3:}\\
+		\\
+		\underline{$\vdash e_2[e_1/x]:e$}\\
+		$\vdash$ let x = $e_1$ in $e_2$: e\\
+		
+		$\Gamma\vdash S_1: t_1$\\
+		$t = t_1$\\
+		\underline{$\Gamma[x \leftarrow t]\vdash S_2:t_2$ }\\
+		$\Gamma\vdash let x=S_1 in S_2:T_2$\\
+		
+		Here, we know from the inductive hypothesis that $S_1$ is of type $t_1$ and E[x \leftarrow t] $S_2$ : $t_2$ will not get stuck since they are well-typed. Therefore, this rule will also always apply.\\
+		
+			
+			
+
+\end{enumerate}
+
+\item 
+\begin{enumerate}
+\item These are large step Operational Semantics.\\
+\item TU 'd' \rightarrow 'D'\\
+	TU 'a' \rightarrow 'A' \\
+		TL 'B' \rightarrow 'b'\\
+		\item 
+		\\
+\item 1. A char is defined as a char.\\
+		2. AL returns a lowercase char if it's the correct case.\\
+		3. AU returns an uppercase char if it's the correct case.\\
+		4. TU converts a char to uppercase and returns it.\\
+		5. TL converts a char to lowercase and returns it.\\
+		\\
+\item A runtime error will occur if AL is called on an uppercase char. A runtime error will also occur if AU is called on a lowercase char.\\
+
+\item A type system to prevent runtime errors for this language would consist of the types lowercase and uppercase. \\
+The concretization of the type lowercase is: $\gamma(lowercase)$ = 'a'-'b'.\\
+ The concretization of the type uppercase is: $\gamma(uppercase)$ = 'A'-'B'.\\
+ 
+\item \underline{lowercase c}\\
+		$\Gamma\vdash c:c$\\
+		
+		\underline{lowercase c}\\
+		$\Gamma\vdash c:c$\\
+		
+		\underline{$\Gamma\vdash P:lowercase $}\\
+		$\Gamma\vdash AL\hspace*{3} P: lowercase$\\
+		
+		\underline{$\Gamma\vdash P:uppercase $}\\
+		$\Gamma\vdash AU\hspace*{3} P: uppercase$\\
+		
+		\underline{$\Gamma\vdash P:lowercase $}\\
+		$\Gamma\vdash TL\hspace*{3} P: lowercase$\\
+		
+		\underline{$\Gamma\vdash P:uppercase $}\\
+		$\Gamma\vdash TL\hspace*{3} P: lowercase$\\
+		
+		\underline{$\Gamma\vdash P:uppercase $}\\
+		$\Gamma\vdash TU\hspace*{3} P: uppercase$\\
+		
+		\underline{$\Gamma\vdash P:lowercase $}\\
+		$\Gamma\vdash TU\hspace*{3} P: uppercase$\\
+		
+ 
+
+\end{enumerate}
+
+\end{enumerate}
+\end{document}

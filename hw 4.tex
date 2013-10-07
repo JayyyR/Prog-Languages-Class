@@ -1,0 +1,95 @@
+\documentclass[11pt]{article}
+
+\usepackage{times,mathptm}
+\usepackage{pifont}
+\usepackage{exscale}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{epsfig}
+
+\textwidth 6.5in
+\textheight 9in
+\oddsidemargin -0.0in
+\topmargin -0.0in
+
+\parindent 0pt     % How much the first word of a paragraph is indented.
+\parskip 0pt       % How much extra space to leave between paragraphs.
+
+\begin{document}
+
+\begin{center}             % If you only centering 1 line use \centerline{}
+\begin{LARGE}
+{\bf CS 312 Work Assignment 4}
+\end{LARGE}
+\vskip 0.25cm      % vertical skip (0.25 cm)
+
+**Joseph Acosta**\\
+**Collaborated with Gilbert Colon**\\
+\end{center}
+
+\begin{enumerate}
+
+\item 
+\begin{enumerate}
+\item $E\vdash x:$ less than 0\\
+	  \underline{$E\vdash e_1: e'$}\\
+	  branch x \{$e_1 e_2 e_3$\}: $e'$\\
+	  
+	  $E\vdash x:$ 0\\
+	  \underline{$E\vdash e_2: e'$}\\
+	  branch x \{$e_1 e_2 e_3$\}: $e'$\\
+	  
+	  $E\vdash x:$ greater than 0\\
+	  \underline{$E\vdash e_3: e'$}\\
+	  branch x \{$e_1 e_2 e_3$\}: $e'$\\
+	  
+\item \underline{$<x,E> \to <x',E'>$\hspace{12}  $<x'$ less than 0$, E'> \to <e_1, E'>$}\\
+	  $<$branch \{$e_1$ $e_2$ $e_3$\}, $E'>$ \to <$e_1$, $E'$ $>$ \\
+	  
+	  \underline{$<x,E> \to <x',E'>$\hspace{12}  $<x'$ is 0$, E'> \to <e_2, E'>$}\\
+	  $<$branch \{$e_1$ $e_2$ $e_3$\}, $E'>$ \to <$e_2$, $E'$ $>$\\
+	  
+	  \underline{$<x,E> \to <x',E'>$\hspace{12}  $<x'$ greater than 0$, E'> \to <e_3, E'>$}\\
+	  $<$branch \{$e_1 e_2 e_3$\}, $E'>$ \to <$e_3$, $E'$ $>$\\
+
+
+\end{enumerate}
+
+\item 
+\begin{enumerate}
+
+\item \underline{$\vdash e_2[e_1/x]: e$}\\
+		$\vdash$ let x = $e_1$ in $e_2$: e\\
+		
+\item \underline{$<e_2, E[x \gets e_1]> \to <e_3,\_>$}\\
+		$<$ let x = $e_1$ in $e_2$, E $>$ \to < $e_3,E >$\\
+		
+\end{enumerate}
+
+\item 
+
+\begin{enumerate}
+\item 3*4\\
+	5/2\\
+	6/4 *2\\
+	
+\item $\vdash S_1:c_1$\\
+
+		\underline{$\vdash S_1:c_1$ \hspace{12} $\vdash S_2:c_2$}\\
+		$\vdash S_1*S_2$ : $c_1*c_2$\\
+		
+		$\vdash S_2:$ $c_2$ is not zero\\
+		\underline{$\vdash S_1:c_1$}\\
+		$\vdash S_1/S_2 : c_1/c_2$\\
+		
+		\underline{$\vdash e_2[e_1/x]:e$}\\
+		$\vdash$ let x = $e_1$ in $e_2$: e\\
+		
+\end{enumerate}
+
+
+\end{enumerate}
+
+\end{document}}
+
+
